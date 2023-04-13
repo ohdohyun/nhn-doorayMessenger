@@ -5,7 +5,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StopWatch;
 
-
 public class LoggingAspect {
 
     private static final Logger log = LoggerFactory.getLogger(LoggingAspect.class);
@@ -23,8 +22,8 @@ public class LoggingAspect {
             stopWatch.stop();
             String className = pjp.getTarget().getClass().getSimpleName();
             String methodName = pjp.getSignature().getName();
-            String elapsedTime = stopWatch.getTotalTimeMillis()+"ms";
-            log.info(elapsedTime);
+            String elapsedTime = stopWatch.getTotalTimeMillis() + "ms";
+            log.info(className + "." + methodName + " " + elapsedTime);
         }
 
         return retVal;
