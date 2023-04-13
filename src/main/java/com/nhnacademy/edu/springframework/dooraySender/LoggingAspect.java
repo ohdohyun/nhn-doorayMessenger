@@ -18,12 +18,14 @@ public class LoggingAspect {
         try {
             stopWatch.start();
             retVal = pjp.proceed();
-
         } catch (Throwable e) {
             throw new RuntimeException(e);
         } finally {
             stopWatch.stop();
-            System.out.println(stopWatch.prettyPrint());
+            String className = pjp.getClass().getSimpleName();
+            String methodName = pjp.getSignature().getName();
+            long elapsedTime = stopWatch.getTotalTimeMillis();
+            System.out.println("[" + className + "].[" + methodName + "] [" + elapsedTime + "]ms");
         }
 
         return retVal;
