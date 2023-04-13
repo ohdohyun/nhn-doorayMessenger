@@ -14,10 +14,11 @@ public class DoorayMessageSender implements MessageSender {
     }
 
     @Override
+    @TimeLog
     public boolean sendMessage() {
         doorayHookSender.send(DoorayHook.builder()
                 .botName(".")
-                .text(".")
+                .text("..")
                 .build());
         return true;
     }
