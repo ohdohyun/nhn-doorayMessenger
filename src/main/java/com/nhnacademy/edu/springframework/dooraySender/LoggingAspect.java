@@ -1,16 +1,15 @@
 package com.nhnacademy.edu.springframework.dooraySender;
 
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.springframework.stereotype.Component;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.StopWatch;
 
-@Aspect
-@Component
+
 public class LoggingAspect {
 
-    @Around("@annotation(TimeLog)")
+    private static final Logger log = LoggerFactory.getLogger(LoggingAspect.class);
+
     private Object loggingSendMessageTime(ProceedingJoinPoint pjp) {
 
         StopWatch stopWatch = new StopWatch();
@@ -22,10 +21,10 @@ public class LoggingAspect {
             throw new RuntimeException(e);
         } finally {
             stopWatch.stop();
-            String className = pjp.getClass().getSimpleName();
+            String className = pjp.getTarget().getClass().getSimpleName();
             String methodName = pjp.getSignature().getName();
-            long elapsedTime = stopWatch.getTotalTimeMillis();
-            System.out.println("[" + className + "].[" + methodName + "] [" + elapsedTime + "]ms");
+            String elapsedTime = stopWatch.getTotalTimeMillis()+"ms";
+            log.info(elapsedTime);
         }
 
         return retVal;

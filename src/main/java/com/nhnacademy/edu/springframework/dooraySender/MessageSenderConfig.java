@@ -12,10 +12,10 @@ import org.springframework.web.client.RestTemplate;
 @EnableAspectJAutoProxy
 public class MessageSenderConfig {
 
-    String doorayHookUrl = "https://hook.dooray.com/services/3204376758577275363/3514081992077299709/HOTTporbR6CBAVodltB-Dw";
+//    String doorayHookUrl = "https://hook.dooray.com/services/3204376758577275363/3514081992077299709/HOTTporbR6CBAVodltB-Dw";
 
-    @Bean
-    public DoorayHookSender doorayHookSender() {
-        return new DoorayHookSender(new RestTemplate(), doorayHookUrl);
-    }
+//    @Bean
+//    public DoorayHookSender doorayHookSender() {
+//        return new DoorayHookSender(new RestTemplate(), doorayHookUrl);
+//    }
 }
