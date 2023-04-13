@@ -10,7 +10,6 @@ public class LoggingAspect {
     private static final Logger log = LoggerFactory.getLogger(LoggingAspect.class);
 
     private Object loggingSendMessageTime(ProceedingJoinPoint pjp) {
-
         StopWatch stopWatch = new StopWatch();
         Object retVal;
         try {

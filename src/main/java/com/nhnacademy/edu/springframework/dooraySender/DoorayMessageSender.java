@@ -3,7 +3,6 @@ package com.nhnacademy.edu.springframework.dooraySender;
 import com.nhn.dooray.client.DoorayHook;
 import com.nhn.dooray.client.DoorayHookSender;
 
-
 public class DoorayMessageSender implements MessageSender {
     private final DoorayHookSender doorayHookSender;
 

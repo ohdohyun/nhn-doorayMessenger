@@ -1,14 +1,11 @@
 package com.nhnacademy.edu.springframework.dooraySender;
 
-import org.springframework.beans.factory.annotation.Qualifier;
-
-import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.lang.annotation.ElementType;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-@Qualifier
 public @interface ElapsedTimeLog {
 }
