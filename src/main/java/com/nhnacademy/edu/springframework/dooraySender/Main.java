@@ -1,10 +1,11 @@
 package com.nhnacademy.edu.springframework.dooraySender;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 
 public class Main {
     public static void main(String[] args) {
-        try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml")){
+        try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("com.nhnacademy.edu.springframework.dooraySender")){
             User user = new User();
             user.setName("...");
             String message = ".....";

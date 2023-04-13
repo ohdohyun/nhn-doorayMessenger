@@ -1,5 +1,6 @@
 package com.nhnacademy.edu.springframework.dooraySender;
 
+
 public class MessageSendService {
     private final MessageSender messageSender;
 
